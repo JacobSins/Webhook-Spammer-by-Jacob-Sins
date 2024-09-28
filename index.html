@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook Spammer & Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Discord Webhook Spammer</h1>
+        <p class="quote">“JACOB SINS ON TOP, LAGAY KO DAW NAME NYA: ROBERTO DENARO"</p>
+
+        <!-- Visitor Notification (Initially Hidden) -->
+        <div id="visitor-notification" style="display:none;">
+            <p>You are visitor number <span id="visitor-count"></span>.</p>
+        </div>
+
+        <!-- Discord Verification Form -->
+        <form id="verification-form">
+            <h2>Discord Verification</h2>
+            <input type="text" id="discord-id" placeholder="Your Discord ID" required>
+            <button type="button" id="send-verification">Send Verification</button>
+
+            <input type="text" id="verification-code" placeholder="Enter Verification Code" style="display:none;" required>
+            <button type="button" id="verify-code" style="display:none;">Verify Code</button>
+        </form>
+
+        <!-- Webhook Spammer Form (Initially Disabled) -->
+        <form id="webhook-form" style="opacity: 0.5; pointer-events: none;">
+            <input type="text" id="webhook-url" placeholder="Webhook URL" required>
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="avatar-url" placeholder="Avatar URL (for bot profile)">
+            <img id="profile-preview" style="display:none; width: 100px; height: 100px; margin-top: 10px; border-radius: 50%;" alt="Profile Preview">
+            <textarea id="message" placeholder="Message"></textarea>
+            <input type="number" id="num-messages" placeholder="Number of messages" min="1" required>
+            <div class="buttons">
+                <button type="button" id="delete-webhook">Delete Webhook</button>
+                <button type="submit" id="start-spamming">Start Spamming</button>
+            </div>
+        </form>
+
+        <!-- Log container -->
+        <div id="logContainer">
+            <h2>Logs</h2>
+            <pre id="logs"></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
